@@ -12,8 +12,19 @@
     <header class="shadow">
       <h1>Sorting Visualizer</h1>
 
-      <ul>
-        <li>Sorting 1</li>
+      <ul class="algorithm-options">
+        <li>
+          <input type="radio" name="algo-type" id="Bubble" value="bubble" checked />
+          <label for="Bubble">Bubble</label>
+        </li>
+        <li>
+          <input type="radio" name="algo-type" id="algo2" value="algo2">
+          <label for="algo2">Algo2</label>
+        </li>
+        <li>
+          <input type="radio" name="algo-type" id="algo3" value="algo3">
+          <label for="algo3">Algo3</label>
+        </li>
       </ul>
     </header>
 
@@ -21,7 +32,7 @@
       <ul class="el-container"></ul>
 
       <div class="el-amount">
-        <input type="number" min="10" max="100">
+        <input type="number" min="50" max="100">
         <!-- Authentiation Input  -->
 
         <!-- Start sorting button -->

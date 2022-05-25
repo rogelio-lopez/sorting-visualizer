@@ -26,12 +26,10 @@ elAmount.addEventListener('change', (e) => {
 
 const createHtmlElement = (rand) => {
   let li = document.createElement("li");
-  let smTxt = document.createElement("small");
-  smTxt.innerText = rand;
+
   li.classList.add("element");
-  li.classList.add("shadow");
+  li.classList.add("inner-shadow-sm");
   li.style.height = `${rand * 4}px`;
-  li.appendChild(smTxt);
 
   return li;
 }

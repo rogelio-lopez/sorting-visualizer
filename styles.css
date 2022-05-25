@@ -10,6 +10,7 @@
   --greyLight-2: #c8d0e7;
   --greyLight-3: #bec8e4;
   --greyDark: #9baacf;
+  --dark: #424f6e;
 }
 
 .shadow{
@@ -23,6 +24,10 @@
 .inner-shadow{
   box-shadow: inset .2rem .2rem .5rem var(--greyLight-2), 
               inset -.2rem -.2rem .5rem var(--white);
+}
+.inner-shadow-sm{
+  box-shadow: inset .1rem .1rem .25rem var(--greyLight-2), 
+              inset -.1rem -.1rem .25rem var(--white);
 }
 
 
@@ -44,6 +49,7 @@ header {
   padding: 20px 0;
   margin-left: auto;
   border-radius: 0 0 0 40px;
+  color: var(--dark);
 }
 header h1 {
   margin-left: 30px;
@@ -68,16 +74,69 @@ main {
 
 
 /* Random Elements */
+.el-container{
+  margin-top: 20px;
+  width: 100%;
+  min-width: 1000px;
+  display: flex;
+  justify-content: center;
+}
 .element{
   background: white;
-  padding: 10px 2px;
+  /* padding: 0 3px; */
+  width: .5%;
   text-align: center;
-  margin: 20px 2px 0px 2px;
+  margin-left: .4%;
   border-radius: 5px;
+  color: var(--greyDark);
 }
 .el-amount{
   position: absolute;
   left: 50%;
   bottom: 3rem;
   transform: translateX(-50%);
+}
+
+
+
+/* Test */
+.algorithm-options li {
+  width: 100px;
+  height: 40px;
+  position: relative;
+}
+
+.algorithm-options label,
+.algorithm-options input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+}
+
+.algorithm-options input[type="radio"] {
+  opacity: 0.01;
+  z-index: 100;
+}
+
+.algorithm-options input[type="radio"]:checked+label,
+.Checked+label {
+  box-shadow: inset .2rem .2rem .5rem var(--greyLight-2), 
+  inset -.2rem -.2rem .5rem var(--white);
+}
+
+.algorithm-options label {
+  padding: 5px;
+  cursor: pointer;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow .25s ease;
+}
+
+.algorithm-options label:hover {
+
 }
