@@ -16,6 +16,10 @@
   box-shadow: .3rem .3rem .6rem var(--greyLight-2), 
               -.2rem -.2rem .5rem var(--white);
 }
+.shadow-sm{
+  box-shadow: .15rem .15rem .3rem var(--greyLight-2), 
+              -.1rem -.1rem .25rem var(--white);
+}
 .inner-shadow{
   box-shadow: inset .2rem .2rem .5rem var(--greyLight-2), 
               inset -.2rem -.2rem .5rem var(--white);
@@ -25,6 +29,10 @@
 body {
   width: 100vw;
   height: 100vh;
+}
+ul {
+  display: flex;
+  list-style: none;
 }
 
 /* Header */
@@ -41,8 +49,6 @@ header h1 {
   margin-left: 30px;
 }
 header ul {
-  display: flex;
-  list-style: none;
   margin-right: 15px;
 }
 header li {
@@ -62,13 +68,13 @@ main {
 
 
 /* Random Elements */
-.random-el{
+.element{
   background: white;
-  padding: 10px;
+  padding: 10px 2px;
   text-align: center;
+  margin: 20px 2px 0px 2px;
+  border-radius: 5px;
 }
-
-
 .el-amount{
   position: absolute;
   left: 50%;
