@@ -6,6 +6,7 @@
 
   /* Neumorplish Colors */
   --white: #FFFFFF;
+  --greyLight: #f4f7ff;
   --greyLight-1: #E4EBF5;
   --greyLight-2: #c8d0e7;
   --greyLight-3: #bec8e4;
@@ -13,6 +14,7 @@
   --dark: #424f6e;
 }
 
+/* Neumorphism Shadows */
 .shadow{
   box-shadow: .3rem .3rem .6rem var(--greyLight-2), 
               -.2rem -.2rem .5rem var(--white);
@@ -30,17 +32,17 @@
               inset -.1rem -.1rem .25rem var(--white);
 }
 
-
 body {
   width: 100vw;
   height: 100vh;
+  background-color: var(--greyLight);
 }
 ul {
   display: flex;
   list-style: none;
 }
 
-/* Header */
+/* ----- HEADER ----- */
 header {
   display: flex;
   align-items: center;
@@ -61,51 +63,12 @@ header li {
   padding: 5px;
   margin: 0 15px;
 }
-
-/* Main */
-main {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  height: calc(100% - 100px);
-  width: 100%;
-}
-
-
-
-/* Random Elements */
-.el-container{
-  margin-top: 20px;
-  width: 100%;
-  min-width: 1000px;
-  display: flex;
-  justify-content: center;
-}
-.element{
-  background: white;
-  /* padding: 0 3px; */
-  width: .5%;
-  text-align: center;
-  margin-left: .4%;
-  border-radius: 5px;
-  color: var(--greyDark);
-}
-.el-amount{
-  position: absolute;
-  left: 50%;
-  bottom: 3rem;
-  transform: translateX(-50%);
-}
-
-
-
-/* Test */
+/* Algorith Radio */
 .algorithm-options li {
   width: 100px;
   height: 40px;
   position: relative;
 }
-
 .algorithm-options label,
 .algorithm-options input {
   position: absolute;
@@ -115,18 +78,15 @@ main {
   bottom: 0;
   border-radius: 20px;
 }
-
 .algorithm-options input[type="radio"] {
   opacity: 0.01;
   z-index: 100;
 }
-
 .algorithm-options input[type="radio"]:checked+label,
 .Checked+label {
   box-shadow: inset .2rem .2rem .5rem var(--greyLight-2), 
   inset -.2rem -.2rem .5rem var(--white);
 }
-
 .algorithm-options label {
   padding: 5px;
   cursor: pointer;
@@ -137,6 +97,45 @@ main {
   transition: box-shadow .25s ease;
 }
 
-.algorithm-options label:hover {
 
+/* ----- MAIN ----- */
+main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: calc(100% - 100px);
+  width: 100%;
+}
+/* Quantity Input Box */
+.quantity{
+  position: absolute;
+  left: 50%;
+  bottom: 3rem;
+  transform: translateX(-50%);
+}
+.quantity input{
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  padding: 20px 10px 20px 20px;
+  width: 55px;
+  font-size: 18px;
+  color: var(--dark);
+  background-color: var(--greyLight);
+}
+
+/* Sorting Elements */
+.el-container{
+  margin-top: 2.5em;
+  width: 100%;
+  min-width: 1000px;
+  display: flex;
+  justify-content: center;
+}
+.element{
+  background: #fcfdff;
+  width: .5%;
+  text-align: center;
+  margin-left: .4%;
+  border-radius: 5px;
 }
