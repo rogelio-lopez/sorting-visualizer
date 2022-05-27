@@ -1,10 +1,10 @@
 const elementObj = {
-  value: 0,
-  position: 0,
-  element: document.querySelector(`.sort-item-${this.position}`), //needs to be updated after node is moved, maybe make into func
+  key: '', // key = array position
+  value: 0, 
   selected: false,
-  moved: false
-}
+  moved: false,
+  htmlElement: ''
+};
 
 
 // Creating dynamic random ElementObj array
@@ -20,10 +20,6 @@ const createHtmlElementObj = (rand) => {
   return li;
 }
 
-const displayElementObjArray = (arr) => {
-  arr.forEach(el => elContainer.appendChild(el));
-}
-
 const createElementObjArray = (quantity) => {
   elContainer.innerHTML = '';
   let elArray = [];
@@ -33,6 +29,14 @@ const createElementObjArray = (quantity) => {
     elArray.push(createHtmlElementObj(random));
   }
   displayElementObjArray(elArray);
+}
+
+/** Two uses:
+ * Display a new array
+ * Display changes in sorting (everything stays the same except for 2)
+ */
+const displayElementObjArray = (arr) => {
+  arr.forEach(el => elContainer.appendChild(el));
 }
 
 elAmount.addEventListener('change', (e) => {

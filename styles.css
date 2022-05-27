@@ -112,16 +112,34 @@ main {
   left: 50%;
   bottom: 3rem;
   transform: translateX(-50%);
+  border-radius: 20px;
+  padding: 20px 20px 20px 20px;
+  background-color: var(--greyLight);
 }
 .quantity input{
   border: none;
   outline: none;
-  border-radius: 20px;
-  padding: 20px 10px 20px 20px;
   width: 55px;
   font-size: 18px;
   color: var(--dark);
-  background-color: var(--greyLight);
+  background: transparent;
+}
+.quantity button{
+  border: solid 1px var(--greyLight-1);
+  border-radius: 10px;
+  outline: none;
+  margin-left: 10px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: var(--dark);
+  background: transparent;
+}
+.quantity button:active{
+  box-shadow: inset .1rem .1rem .25rem var(--greyLight-2), 
+              inset -.1rem -.1rem .25rem var(--white);
+  border: solid 1px transparent;
 }
 
 /* Sorting Elements */

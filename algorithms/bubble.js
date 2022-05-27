@@ -1,4 +1,4 @@
-const bubbleSort = (unsortedArray = [10,10, 14, 28, 11,1,5,7,3,2,5,7,4, 7, 16, 30, 50, 25, 18]) => {
+const bubbleSort = (unsortedArray) => {
   let arrObj;
 
   do{
