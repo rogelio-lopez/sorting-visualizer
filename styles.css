@@ -143,17 +143,21 @@ main {
 }
 
 /* Sorting Elements */
-.el-container{
+.container{
   margin-top: 2.5em;
   width: 100%;
   min-width: 1000px;
   display: flex;
   justify-content: center;
 }
-.element{
+.rand-obj{
   background: #fcfdff;
   width: .5%;
   text-align: center;
   margin-left: .4%;
   border-radius: 5px;
+}
+
+*:disabled{
+  color: var(--greyLight-2) !important;
 }

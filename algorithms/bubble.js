@@ -1,4 +1,4 @@
-const bubbleSort = (unsortedArray) => {
+export const bubbleSort = (unsortedArray) => {
   let arrObj;
 
   do{
@@ -21,5 +21,3 @@ const bubbleAlgo = (arr) => {
 
   return {arr, isModified};
 };
-
-bubbleSort();
