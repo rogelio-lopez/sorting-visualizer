@@ -16,6 +16,7 @@ export const displayArr = (arr) => {
 /** ----- Visualize sorting/switching step for algorithms ----- */
 export const switchPairs = (el1, el2) => {
     // visual Stuff for switching goes here
+
     return [el2, el1];
 }
 

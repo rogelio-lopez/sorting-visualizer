@@ -17,16 +17,10 @@ const startSorting = document.querySelector('#startSorting');
 startSorting.addEventListener('click', (e) => {
 
   // disable start button, input, other radios while sorting
-  startSorting.disabled = true;
-  quantity.disabled = true;
+  // startSorting.disabled = true;
 
-  // Sort
-  bubbleSort(mainArr)
-
-  // Display sorted array
-  displayArr(mainArr)
+  // Check Sort radio and activate appropriate
+  bubbleSort(mainArr);
 
   // enable btn & input
-  startSorting.disabled = false;
-  quantity.disabled = false;
 })
