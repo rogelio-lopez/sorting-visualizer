@@ -1,5 +1,5 @@
 import { bubbleSort } from './algorithms/bubble.js';
-import { displayArr, createRandomArr } from './visuals.js';
+import {  createRandomArr } from './visuals.js';
 
 // Create array on page load
 let mainArr = createRandomArr(50);
@@ -14,13 +14,23 @@ quantity.addEventListener('change', (e) => {
 
 /** Sort Array on start button */
 const startSorting = document.querySelector('#startSorting');
-startSorting.addEventListener('click', (e) => {
 
-  // disable start button, input, other radios while sorting
-  // startSorting.disabled = true;
+startSorting.addEventListener('click', () => {
 
-  // Check Sort radio and activate appropriate
-  bubbleSort(mainArr);
+  handleSort(document.querySelector('input[name="sort-type"]:checked').value)
+});
 
-  // enable btn & input
-})
+const handleSort = (sortType) => {
+
+  startSorting.disabled = true;
+
+  switch (sortType) {
+    case 'bubble':
+      bubbleSort(mainArr, startSorting);
+      break;
+
+    default:
+      console.log('Error?');
+      break;
+  }
+}

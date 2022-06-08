@@ -3,5 +3,6 @@ Sorting algorithms visualizer built in HTML, CSS, JS
 
 
 Todo:
-- step by step visualizer for algorithms
+- disable start button when sorting is running
+- Add insertion Sort
 

@@ -1,34 +1,18 @@
-import { switchPairs, displayArr } from '../visuals.js';
+import { sleep, displayArr } from '../visuals.js';
 
-export const bubbleSort = (unsortedArray) => {
-  let resultObj;
-  let tempArr = unsortedArray;
+export const bubbleSort = async (unsortedArray) => {
+  let isSorted = true;
+  let arr = unsortedArray;
 
   do{
-    resultObj = bubbleAlgo(tempArr);
-    console.log(resultObj);  //Promise pending problem
-    tempArr = resultObj.arr;
-  }while(resultObj.isModified);
-
-  return resultObj.arr;
-};
-
-const bubbleAlgo = async (arr) => {
-  let arrItem =  arr;
-  let isModified =  false;
-
-  for (let i = 0; i < arr.length - 1; i++) {
-    await sleep(50);
-    if (arrItem[i].value > arrItem[i + 1].value) {
-      [ arrItem[i], arrItem[i + 1] ] = [ arrItem[i + 1], arrItem[i] ];
-      isModified = true;
-      displayArr(arrItem);
+    for (let i = 0; i < unsortedArray.length - 1; i++) {
+      if (arr[i].value > arr[i + 1].value) {
+        [ arr[i], arr[i + 1] ] = [ arr[i + 1], arr[i] ];
+        isSorted = false;
+        displayArr(arr);
+      }  
+      await sleep(.5);
     }
-  }
-
-  return {arr, isModified};
+  }while(!isSorted);
 };
 
-const sleep = (milliseconds) => {
-  return new Promise(resolve => setTimeout(resolve, milliseconds))
-}

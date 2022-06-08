@@ -8,19 +8,6 @@ const randObj = {
 
 const container = document.querySelector('.container');
 
-/** ----- Displays HTML when passed obj arr ----- */
-export const displayArr = (arr) => {
-    arr.forEach(el => container.appendChild(el.htmlElement));
-}
-
-/** ----- Visualize sorting/switching step for algorithms ----- */
-export const switchPairs = (el1, el2) => {
-    // visual Stuff for switching goes here
-
-    return [el2, el1];
-}
-
-
 /** ----- Creating obj array of random numbers ----- */
 const createHtmlObj = (randNum) => {
     let li = document.createElement("li");
@@ -46,4 +33,14 @@ export const createRandomArr = (quantity) => {
 
     displayArr(elArray);
     return elArray;
+}
+
+/** ----- Displays HTML when passed obj arr ----- */
+export const displayArr = (arr) => {
+    arr.forEach(el => container.appendChild(el.htmlElement));
+}
+
+/** ----- Slows down loops to see step by step ----- */
+export const sleep = (ms) => {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
