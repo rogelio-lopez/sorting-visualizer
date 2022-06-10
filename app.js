@@ -1,4 +1,5 @@
 import { bubbleSort } from './algorithms/bubble.js';
+import { insertionSort } from './algorithms/insertion.js';
 import {  createRandomArr } from './visuals.js';
 
 // Create array on page load
@@ -22,11 +23,15 @@ startSorting.addEventListener('click', () => {
 
 const handleSort = (sortType) => {
 
-  startSorting.disabled = true;
+  //startSorting.disabled = true;
 
   switch (sortType) {
     case 'bubble':
-      bubbleSort(mainArr, startSorting);
+      bubbleSort(mainArr);
+      break;
+
+    case 'insertion':
+      insertionSort(mainArr);
       break;
 
     default:
