@@ -1,5 +1,6 @@
 import { bubbleSort } from './algorithms/bubble.js';
 import { insertionSort } from './algorithms/insertion.js';
+import { mergeSort } from './algorithms/merge.js';
 import {  createRandomArr } from './visuals.js';
 
 // Create array on page load
