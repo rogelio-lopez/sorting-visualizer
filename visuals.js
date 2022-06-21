@@ -1,38 +1,51 @@
 const randObj = {
-    key: 0, // key = array position
     value: 0, 
-    selected: false,
-    moved: false,
     htmlElement: ''
 };
 
 const container = document.querySelector('.container');
 
 /** ----- Creating obj array of random numbers ----- */
+const createGradient = (randNum) => { 
+    let cl1 = 230, cl2 = 77, cl3 = 45;
+    let cr1 = 252, cr2 = 166, cr3 = 29; 
+    let rgbDiff = [(cr1 - cl1) / 100, (cr2 - cl2) / 100, (cr3 - cl3) / 100];
+    
+    return `rgb(${cl1 + (rgbDiff[0] * (randNum - 1))},
+                ${cl2 + (rgbDiff[1] * (randNum - 1))},
+                ${cl3 + (rgbDiff[2] * (randNum - 1))})`;
+}
+
 const createHtmlObj = (randNum) => {
     let li = document.createElement("li");
     li.classList.add("rand-obj");
     li.classList.add("shadow-sm");
-    li.style.height = `${randNum * 4}px`;
+    li.style.height = `${randNum * 5}px`;
+    li.style.backgroundColor = createGradient(randNum);
 
     return li;
 }
 
-export const createRandomArr = (quantity) => {
+export const createRandomArr = () => {
     container.innerHTML = '';
-    let elArray = [];
 
-    for (let i = 0; i < quantity; i++){
-        //Creates new elementObj, adds info, inserts into obj array
+    // Create  array
+    let i = 1;
+    let arr = [...new Array(100)].map(() => {
         const obj = Object.create(randObj);
-        obj.key = i;
-        obj.value = Math.floor(Math.random() * 90) + 10;
+        obj.value = i++;
         obj.htmlElement = createHtmlObj(obj.value);
-        elArray.push(obj);
+        return obj;
+    });
+
+    // Randomize (Fisher–Yates)
+    for (i = arr.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
     }
 
-    displayArr(elArray);
-    return elArray;
+    displayArr(arr);
+    return arr;
 }
 
 /** ----- Displays HTML when passed obj arr ----- */

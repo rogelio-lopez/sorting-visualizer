@@ -7,7 +7,7 @@ import {  createRandomArr } from './visuals.js';
 let mainArr = createRandomArr(50);
 
 
-/** Create an array of random #s w/ size quantity */
+/** Create an array of random #'s w/ size quantity */
 const quantity = document.querySelector('.quantity input');
 quantity.addEventListener('change', (e) => {
   mainArr = createRandomArr(e.target.value);
