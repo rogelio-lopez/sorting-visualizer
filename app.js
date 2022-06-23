@@ -35,6 +35,10 @@ const handleSort = (sortType) => {
       insertionSort(mainArr);
       break;
 
+    case 'merge':
+      console.log(mergeSort(mainArr));
+      break;
+
     default:
       console.log('Error?');
       break;

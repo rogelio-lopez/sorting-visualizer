@@ -3,5 +3,6 @@ Sorting algorithms visualizer built in HTML, CSS, JS
 
 
 Todo:
-- Finish Merge sort merge() function
+- Display functionality for merge sort algo
+    - Has duplicate elements with obj arr
 - disable start button when sorting is running
