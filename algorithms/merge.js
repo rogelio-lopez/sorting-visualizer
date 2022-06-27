@@ -1,6 +1,22 @@
 import { displayArr } from '../visuals.js';
 
+
+const tempArr = [
+    { value: 1, htmlElement: '' },
+    { value: 9, htmlElement: '' },
+    { value: 3, htmlElement: '' },
+    { value: 5, htmlElement: '' },
+    { value: 7, htmlElement: '' },
+    { value: 2, htmlElement: '' },
+    { value: 4, htmlElement: '' },
+    { value: 10, htmlElement: '' },
+    { value: 6, htmlElement: '' },
+    { value: 8, htmlElement: '' }
+]
+
+
 export const mergeSort = (arr) => {
+
     if(arr.length <= 1){
         return arr;
     }
@@ -18,27 +34,49 @@ export const mergeSort = (arr) => {
 
 const merge = (left, right) => {
     let mergedArr = [];
-    let leftIndex = 0, rightIndex = 0;
+    let leftIndex = 0, rightIndex = 0
+
+    console.log("left: ");
+    console.log(left);
+    console.log("right: ");
+    console.log(right);
 
     while(leftIndex < left.length && rightIndex < right.length){
-        if(left[leftIndex].value <= right[rightIndex].value){
-            mergedArr.push(left[leftIndex]);
+
+        /**
+         * Duplicates being created when pushing result into mergedArr
+         */
+
+        let leftObj = {...left[leftIndex]};
+        let rightObj = {...right[rightIndex]};
+    
+        if(leftObj.value <= rightObj.value){
+            console.log(leftObj);
+            mergedArr.push(leftObj);
+
+            console.log("after");
+            console.log(mergedArr);
             leftIndex++;
         }
         else{
-            mergedArr.push(right[rightIndex]);
+            mergedArr.push(rightObj);
             rightIndex++;
         }
     }
-
+    
     if (left){
         mergedArr.push(...left);
     }
-    else if (right){
+    if (right){
         mergedArr.push(...right);
     }
 
-    console.log(mergedArr);
-
     return mergedArr;
 }
+
+
+let arr2 = mergeSort(tempArr);
+
+console.log("finished: ");
+console.log( arr2);
+
