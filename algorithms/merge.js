@@ -33,13 +33,8 @@ export const mergeSort = (arr) => {
 }  
 
 const merge = (left, right) => {
-    let mergedArr = [];
+    let mergedArr = new Array();
     let leftIndex = 0, rightIndex = 0
-
-    console.log("left: ");
-    console.log(left);
-    console.log("right: ");
-    console.log(right);
 
     while(leftIndex < left.length && rightIndex < right.length){
 
@@ -47,11 +42,19 @@ const merge = (left, right) => {
          * Duplicates being created when pushing result into mergedArr
          */
 
-        let leftObj = {...left[leftIndex]};
-        let rightObj = {...right[rightIndex]};
+        let leftObj = left[leftIndex];
+        let rightObj = right[rightIndex];
+
+        console.log("left: ");
+        console.log(leftObj);
+        
+        console.log("right: ");
+        console.log(rightObj);
+
+        console.log("before: ");
+        console.log(mergedArr.length);
     
         if(leftObj.value <= rightObj.value){
-            console.log(leftObj);
             mergedArr.push(leftObj);
 
             console.log("after");
@@ -75,8 +78,8 @@ const merge = (left, right) => {
 }
 
 
-let arr2 = mergeSort(tempArr);
+// let arr2 = mergeSort(tempArr);
 
-console.log("finished: ");
-console.log( arr2);
+// console.log("finished: ");
+// console.log( arr2);
 
