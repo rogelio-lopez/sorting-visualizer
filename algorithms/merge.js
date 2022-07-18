@@ -44,25 +44,15 @@ const merge = (left, right) => {
 
         let leftObj = left[leftIndex];
         let rightObj = right[rightIndex];
-
-        console.log("left: ");
-        console.log(leftObj);
-        
-        console.log("right: ");
-        console.log(rightObj);
-
-        console.log("before: ");
-        console.log(mergedArr.length);
     
         if(leftObj.value <= rightObj.value){
             mergedArr.push(leftObj);
-
-            console.log("after");
-            console.log(mergedArr);
+            left.shift();
             leftIndex++;
         }
         else{
             mergedArr.push(rightObj);
+            right.shift();
             rightIndex++;
         }
     }
@@ -78,8 +68,8 @@ const merge = (left, right) => {
 }
 
 
-// let arr2 = mergeSort(tempArr);
+let arr2 = mergeSort(tempArr);
 
-// console.log("finished: ");
-// console.log( arr2);
+console.log("finished: ");
+console.log( arr2);
 
