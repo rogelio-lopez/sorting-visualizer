@@ -36,7 +36,7 @@ const handleSort = (sortType) => {
       break;
 
     case 'merge':
-      // console.log("finished: " + mergeSort(mainArr));
+      // console.log(mergeSort(mainArr));
       break;
 
     // case 'quicksort':

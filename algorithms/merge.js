@@ -14,8 +14,8 @@ const tempArr = [
     { value: 8, htmlElement: '' }
 ]
 
-
-export const mergeSort = (arr) => {
+export const mergeSort = (unsortedArray) => {
+    let arr = unsortedArray;
 
     if(arr.length <= 1){
         return arr;
@@ -33,40 +33,31 @@ export const mergeSort = (arr) => {
 }  
 
 const merge = (left, right) => {
-    let mergedArr = new Array();
+    let mergedArr = new Array(); //Without making a new one, just swapping 
     let leftIndex = 0, rightIndex = 0
 
     while(leftIndex < left.length && rightIndex < right.length){
-
-        /**
-         * Duplicates being created when pushing result into mergedArr
-         */
-
-        let leftObj = left[leftIndex];
-        let rightObj = right[rightIndex];
-    
-        if(leftObj.value <= rightObj.value){
-            mergedArr.push(leftObj);
-            left.shift();
+        if(left[leftIndex].value <= right[rightIndex].value){
+            mergedArr.push(left[leftIndex]);
             leftIndex++;
         }
         else{
-            mergedArr.push(rightObj);
-            right.shift();
+            mergedArr.push(right[rightIndex]);
             rightIndex++;
         }
     }
     
-    if (left){
-        mergedArr.push(...left);
+    // array would still have items so it would re add
+    if (left.length > leftIndex){
+        mergedArr.push(...left.slice(leftIndex, left.length));
     }
-    if (right){
-        mergedArr.push(...right);
+    else if (right.length > rightIndex){
+        mergedArr.push(...right.slice(rightIndex, right.length));
     }
 
+    console.log(mergedArr);
     return mergedArr;
 }
-
 
 let arr2 = mergeSort(tempArr);
 
