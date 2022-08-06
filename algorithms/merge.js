@@ -12,29 +12,39 @@ const tempArr = [
     { value: 10, htmlElement: '' },
     { value: 6, htmlElement: '' },
     { value: 8, htmlElement: '' }
-]
+];
 
 export const mergeSort = (unsortedArray) => {
-    let arr = unsortedArray;
-
-    if(arr.length <= 1){
-        return arr;
-    }
-    else{
-        const half = Math.ceil(arr.length / 2);    
-        let leftHalf = arr.slice(0, half)
-        let rightHalf = arr.slice(half, arr.length);
-
-        leftHalf = mergeSort(leftHalf);
-        rightHalf = mergeSort(rightHalf);
-
-        return merge(leftHalf, rightHalf);
-    }
+    mergeSplit(unsortedArray, unsortedArray);
 }  
 
-const merge = (left, right) => {
-    let mergedArr = new Array(); //Without making a new one, just swapping 
+const mergeSplit = (unsortArr, fullArr) => {
+    if(unsortArr.length <= 1){
+        return unsortArr;
+    }
+    else{
+        const half = Math.ceil(unsortArr.length / 2);    
+        let leftHalf = unsortArr.slice(0, half)
+        let rightHalf = unsortArr.slice(half, unsortArr.length);
+
+        leftHalf = mergeSplit(leftHalf);
+        rightHalf = mergeSplit(rightHalf);
+
+        return merge(leftHalf, rightHalf, fullArr);
+    }
+}
+
+/** Thots:
+ * Use .indexOf() when comparing
+ * pass full array as third argument to keep displaying after every step
+ */
+const merge = (left, right, full) => {
+    let mergedArr = new Array(); 
+    let leftMostIndex = getIndex(left[0].value, full);
+    let rightMostIndex = getIndex(right[right.length - 1].value, full);
     let leftIndex = 0, rightIndex = 0
+
+    /* Modify full arr using lefrMost and rightMost to know where */
 
     while(leftIndex < left.length && rightIndex < right.length){
         if(left[leftIndex].value <= right[rightIndex].value){
@@ -55,12 +65,11 @@ const merge = (left, right) => {
         mergedArr.push(...right.slice(rightIndex, right.length));
     }
 
-    console.log(mergedArr);
     return mergedArr;
 }
 
-let arr2 = mergeSort(tempArr);
+// Helper functions needed for visual effects
+const getIndex = (index, arr = 0) =>  arr.map(r => r.value).indexOf(index);
 
 console.log("finished: ");
-console.log( arr2);
-
+mergeSort(tempArr);

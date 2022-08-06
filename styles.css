@@ -53,7 +53,7 @@ header {
   border-radius: 0 0 0 40px;
   color: var(--dark);
 }
-header h1 {
+header h2 {
   margin-left: 30px;
 }
 header ul {
@@ -116,16 +116,8 @@ main {
   padding: 20px 20px 20px 20px;
   background-color: var(--greyLight);
 }
-.quantity input{
-  border: none;
-  outline: none;
-  width: 55px;
-  font-size: 18px;
-  color: var(--dark);
-  background: transparent;
-}
 .quantity button{
-  border: solid 1px var(--greyLight-1);
+  border: none;
   border-radius: 10px;
   outline: none;
   margin-left: 10px;

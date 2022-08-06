@@ -3,16 +3,11 @@ import { insertionSort } from './algorithms/insertion.js';
 import { mergeSort } from './algorithms/merge.js';
 import {  createRandomArr } from './visuals.js';
 
+import { displayArr } from './visuals.js';
+
+
 // Create array on page load
 let mainArr = createRandomArr(50);
-
-
-/** Create an array of random #'s w/ size quantity */
-const quantity = document.querySelector('.quantity input');
-quantity.addEventListener('change', (e) => {
-  mainArr = createRandomArr(e.target.value);
-}); 
-
 
 /** Sort Array on start button */
 const startSorting = document.querySelector('#startSorting');
@@ -36,7 +31,7 @@ const handleSort = (sortType) => {
       break;
 
     case 'merge':
-      // console.log(mergeSort(mainArr));
+      mergeSort(mainArr);
       break;
 
     // case 'quicksort':

@@ -1,6 +1,6 @@
 const randObj = {
     value: 0, 
-    htmlElement: ''
+    htmlElement: undefined,
 };
 
 const container = document.querySelector('.container');
