@@ -1,8 +1,11 @@
-# Sorting-Algorithms
-Sorting algorithms visualizer built in HTML, CSS, JS
+#Sorting algorithms visualizer 
 
+Built in VanillaJS
 
-Todo:
-- Display functionality for merge sort algo
-    - Has duplicate elements with obj arr
-- disable start button when sorting is running
+Algoriths Supported: 
+<ul>
+    <li>Bubble</li>
+    <li>Insertion</li>
+    <li>Merge (Coming Soon)</li>
+    <li>Quicksort (Coming Soon)</li>
+</ul>
