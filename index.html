@@ -1,45 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
 
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    <header class="shadow">
-      <h2>Sorting Visualizer</h2>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite + TS</title>
+</head>
 
-      <ul class="algorithm-options">
-        <li>
-          <input type="radio" name="sort-type" id="Bubble" value="bubble" checked />
-          <label for="Bubble">Bubble</label>
-        </li>
-        <li>
-          <input type="radio" name="sort-type" id="Insertion" value="insertion">
-          <label for="Insertion">Insertion</label>
-        </li>
-        <li>
-          <input type="radio" name="sort-type" id="merge" value="merge" />
-          <label for="merge">Test: Merge</label>
-        </li>
-        <!-- <li>
+<body>
+  <header class="shadow">
+    <h2>Sorting Visualizer</h2>
+
+    <ul class="algorithm-options">
+      <li>
+        <input type="radio" name="sort-type" id="Bubble" value="bubble" checked />
+        <label for="Bubble">Bubble</label>
+      </li>
+      <li>
+        <input type="radio" name="sort-type" id="Insertion" value="insertion">
+        <label for="Insertion">Insertion</label>
+      </li>
+      <li>
+        <input type="radio" name="sort-type" id="merge" value="merge" />
+        <label for="merge">Test: Merge</label>
+      </li>
+      <!-- <li>
           <input type="radio" name="sort-type" id="quicksort" value="quicksort" disabled>
           <label for="quicksort">Quicksort</label>
         </li> -->
-      </ul>
-    </header>
+    </ul>
+  </header>
 
-    <main>
-      <ul class="container"></ul>
+  <main>
+    <ul class="container"></ul>
 
-      <div class="quantity shadow">
-          <button id="startSorting">start</button>
-      </div>
-    </main>
+    <div class="quantity shadow">
+      <button id="startSorting">start</button>
+    </div>
+  </main>
 
-    <script type="module" src="./app.js"></script>
-  </body>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>
