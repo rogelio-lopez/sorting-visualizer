@@ -1,42 +1,31 @@
-import { bubbleSort } from './algos/bubble.js';
-import { insertionSort } from './algos/insertion.js';
-import { mergeSort } from './algos/merge.js';
-import { createRandomArr } from './visuals.ts';
+import './style.css'
+import Algos from './algos.ts';
 
-//import { displayArr } from './visuals.js';
-
-
-// Create array on page load
-let mainArr = createRandomArr(50);
-
-/** Sort Array on start button */
+/* Sort Array on start button */
 const startSorting = document.querySelector('#startSorting');
+const a = new Algos;
 
-startSorting.addEventListener('click', () => {
+// Display initial
+a.createRandomArr();
+a.displayArr();
 
-  handleSort(document.querySelector('input[name="sort-type"]:checked').value)
+startSorting?.addEventListener('click', () => {
+  let el = document.querySelector('input[name="sort-type"]:checked') as HTMLInputElement;
+  handleSort(el.value)
 });
 
-const handleSort = (sortType) => {
+function handleSort(sortType: string) {
 
   //startSorting.disabled = true;
 
   switch (sortType) {
     case 'bubble':
-      bubbleSort(mainArr);
+      a.bubbleSort();
       break;
 
     case 'insertion':
-      insertionSort(mainArr);
+      a.insertion();
       break;
-
-    case 'merge':
-      mergeSort(mainArr);
-      break;
-
-    // case 'quicksort':
-    //   quicksort(mainArr);
-    //   break;
 
     default:
       console.log('Error?');
