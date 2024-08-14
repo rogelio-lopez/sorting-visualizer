@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/sorting-visualizer/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite + TS</title>
+  <script type="module" crossorigin src="/sorting-visualizer/assets/index-DfwH5msD.js"></script>
+  <link rel="stylesheet" crossorigin href="/sorting-visualizer/assets/index-DHFDSMth.css">
+</head>
+
+<body>
+  <header class="shadow">
+    <h2>Sorting Visualizer</h2>
+
+    <ul class="algorithm-options">
+      <li>
+        <input type="radio" name="sort-type" id="Bubble" value="bubble" checked />
+        <label for="Bubble">Bubble</label>
+      </li>
+      <li>
+        <input type="radio" name="sort-type" id="Insertion" value="insertion">
+        <label for="Insertion">Insertion</label>
+      </li>
+      <li>
+        <input type="radio" name="sort-type" id="merge" value="merge" />
+        <label for="merge">Test: Merge</label>
+      </li>
+      <!-- <li>
+          <input type="radio" name="sort-type" id="quicksort" value="quicksort" disabled>
+          <label for="quicksort">Quicksort</label>
+        </li> -->
+    </ul>
+  </header>
+
+  <main>
+    <ul class="container"></ul>
+
+    <div class="quantity shadow">
+      <button id="startSorting">start</button>
+    </div>
+  </main>
+
+</body>
+
+</html>
